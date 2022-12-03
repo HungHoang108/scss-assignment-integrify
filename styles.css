@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 3rem 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav a {
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+}/*# sourceMappingURL=styles.css.map */
