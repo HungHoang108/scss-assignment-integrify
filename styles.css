@@ -6,16 +6,174 @@
 body {
   padding: 3rem 2rem;
 }
-
-.nav {
+body .nav {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 2rem;
 }
-.nav a {
+body .nav a {
   text-decoration: none;
+}
+
+main .section1 .section1-divArticle1 {
+  display: grid;
+  grid-template: "area1 area2 area3" "area1 area4 area5";
+  gap: 10px;
+  padding-bottom: 1rem;
+}
+main .section1 .section1-divArticle1 .section1-divArticle1__article1 {
+  grid-area: area1;
+}
+main .section1 .section1-divArticle1 .section1-divArticle1__article2 {
+  grid-area: area2;
+}
+main .section1 .section1-divArticle1 .section1-divArticle1__article3 {
+  grid-area: area3;
+}
+main .section1 .section1-divArticle1 .section1-divArticle1__article4 {
+  grid-area: area4;
+}
+main .section1 .section1-divArticle1 .section1-divArticle1__article5 {
+  grid-area: area5;
+}
+main .section1 .section1-divArticle1 .sc1 {
+  padding: 2rem;
+  background-color: aqua;
+  border-radius: 10px;
+}
+main .section1 .section1-divArticle2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  padding-bottom: 3rem;
+}
+main .section1 .section1-divArticle2 article {
+  padding: 4rem 2rem;
+  border-radius: 10px;
+  background-color: red;
+}
+main .section2 h4 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+main .section2 .section2-divArticle1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  padding-bottom: 1rem;
+}
+main .section2 .section2-divArticle1 article {
+  background-color: beige;
+  padding: 4rem 2rem;
+}
+main .section2 .section2-divArticle3 {
+  display: grid;
+  grid-template-areas: "art1 art2 art3" "art4 art5 art5";
+  gap: 10px;
+  padding-bottom: 2rem;
+}
+main .section2 .section2-divArticle3 article {
+  background-color: yellowgreen;
+  padding: 4rem 2rem;
+  border-radius: 10px;
+}
+main .section2 .section2-divArticle3 .section2-divArticle3__article1 {
+  grid-area: art1;
+}
+main .section2 .section2-divArticle3 .section2-divArticle3__article2 {
+  grid-area: art2;
+}
+main .section2 .section2-divArticle3 .section2-divArticle3__article3 {
+  grid-area: art3;
+}
+main .section2 .section2-divArticle3 .section2-divArticle3__article4 {
+  grid-area: art4;
+}
+main .section2 .section2-divArticle3 .section2-divArticle3__article5 {
+  grid-area: art5;
+}
+main .section3 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+main .section3 .section3-div {
+  display: flex;
+  justify-content: center;
+}
+main .section3 .section3-div .animated-text-container {
+  width: 12rem;
+  padding: 1rem;
+}
+main .section3 .section3-div .animated-text-container h4 {
+  margin: 1rem;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid red; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto;
+  -webkit-animation: typing 5s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+          animation: typing 5s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+}
+@-webkit-keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@-webkit-keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(228, 13, 13);
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(228, 13, 13);
+  }
+}
+main .section3 input {
+  margin: 1rem;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid black;
+}
+main .section3 button {
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  border: none;
+}
+main .section3 button:hover {
+  background-color: rgb(255, 208, 147);
+  transition: background-color 0.7s ease-out 100ms;
 }
 
 footer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+footer a {
+  text-decoration: none;
+}
+footer .nav-footer a {
+  padding: 1rem;
 }/*# sourceMappingURL=styles.css.map */
