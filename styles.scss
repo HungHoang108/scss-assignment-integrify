@@ -1,189 +1,245 @@
+$color1: #e3fdfd;
+$color2: #f08a5d;
+$color3: #f9ed69;
+$color4: #ffc7c7;
+$color5: #ffe2e2;
+$color6: #aa96da;
+$color7: #a2b29f;
+$borderradious: 10px;
+.extend-section2-bg {
+  padding: 10rem 2rem;
+  border-radius: $borderradious;
+  width: 100%;
+  height: 100%;
+}
+
+.extend-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  div {
+    position: relative;
+    a {
+      padding: 1rem;
+      text-decoration: none;
+    }
+    a:hover:before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      background-color: $color7;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+    }
+  }
+}
+
+.hover-section1 {
+  &:hover {
+    transition: 300ms ease;
+    transform: translateY(-0.5rem);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   padding: 3rem 2rem;
+  box-sizing: border-box;
 
   .nav {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 2rem;
-
-    a {
-      text-decoration: none;
-    }
+    @extend .extend-nav;
   }
-}
 
-main {
-  .section1 {
-    .section1-divArticle1 {
-      display: grid;
-      grid-template: "area1 area2 area3" "area1 area4 area5";
-      gap: 10px;
-      padding-bottom: 1rem;
+  main {
+    .section1 {
+      .section1-divArticle1 {
+        display: grid;
+        grid-template: "area1 area2 area3" "area1 area4 area5";
+        gap: 10px;
+        padding-bottom: 1rem;
 
-      .section1-divArticle1__article1 {
-        grid-area: area1;
-      }
-      .section1-divArticle1__article2 {
-        grid-area: area2;
-      }
-      .section1-divArticle1__article3 {
-        grid-area: area3;
-      }
-      .section1-divArticle1__article4 {
-        grid-area: area4;
-      }
-      .section1-divArticle1__article5 {
-        grid-area: area5;
+        article:nth-child(1) {
+          grid-area: area1;
+          background-color: #ffc7c77e;
+          width: 100%;
+          height: 100%;
+          border-radius: $borderradious;
+          @extend .hover-section1;
+        }
+
+        article:nth-child(2) {
+          grid-area: area2;
+          background-color: $color1;
+          @extend .hover-section1;
+        }
+        article:nth-child(3) {
+          grid-area: area3;
+          background-color: $color1;
+          @extend .hover-section1;
+        }
+        article:nth-child(4) {
+          grid-area: area4;
+          background-color: $color1;
+          @extend .hover-section1;
+        }
+        article:nth-child(5) {
+          grid-area: area5;
+          background-color: $color1;
+          @extend .hover-section1;
+        }
+        article {
+          padding: 2rem;
+          border-radius: 10px;
+        }
       }
 
-      .sc1 {
-        padding: 2rem;
-        background-color: aqua;
-        border-radius: 10px;
+      .section1-divArticle2 {
+        margin-bottom: 3rem;
+        article {
+          margin-bottom: 1rem;
+          border-radius: $borderradious;
+        }
+        article:nth-child(1) {
+          background-image: url("./img/2.jpg");
+
+          div {
+            @extend .extend-section2-bg;
+            background-color: hsla(150, 76%, 43%, 0.582);
+          }
+        }
+        article:nth-child(2) {
+          div {
+            @extend .extend-section2-bg;
+            background-color: $color3;
+          }
+        }
       }
     }
+    .section2 {
+      h4 {
+        text-align: center;
+        padding-bottom: 2rem;
+      }
+      .section2-divArticle1 {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+        padding-bottom: 1rem;
+        article {
+          background-color: beige;
+          padding: 4rem 2rem;
+        }
+      }
 
-    .section1-divArticle2 {
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 10px;
-      padding-bottom: 3rem;
+      .section2-divArticle3 {
+        display: grid;
+        grid-template-areas: "art1 art2 art3" "art4 art5 art5";
+        gap: 10px;
+        padding-bottom: 2rem;
 
-      article {
-        padding: 4rem 2rem;
-        border-radius: 10px;
-        background-color: red;
+        article {
+          background-color: yellowgreen;
+          padding: 4rem 2rem;
+          border-radius: 10px;
+        }
+        .section2-divArticle3__article1 {
+          grid-area: art1;
+        }
+
+        .section2-divArticle3__article2 {
+          grid-area: art2;
+        }
+
+        .section2-divArticle3__article3 {
+          grid-area: art3;
+        }
+        .section2-divArticle3__article4 {
+          grid-area: art4;
+        }
+        .section2-divArticle3__article5 {
+          grid-area: art5;
+        }
       }
     }
-  }
-  .section2 {
-    h4 {
+    .section3 {
       text-align: center;
       padding-bottom: 2rem;
-    }
-    .section2-divArticle1 {
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 10px;
-      padding-bottom: 1rem;
-      article {
-        background-color: beige;
-        padding: 4rem 2rem;
+      .section3-div {
+        // position: relative;
+        display: flex;
+        justify-content: center;
+
+        .animated-text-container {
+          width: 12rem;
+
+          padding: 1rem;
+          h4 {
+            margin: 1rem;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: 0.15em solid red; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto;
+            animation: typing 5s steps(40, end) infinite,
+              blink-caret 0.75s step-end infinite;
+          }
+          @keyframes typing {
+            0% {
+              width: 0;
+            }
+
+            50% {
+              width: 100%;
+            }
+
+            100% {
+              width: 0;
+            }
+          }
+
+          @keyframes blink-caret {
+            from,
+            to {
+              border-color: transparent;
+            }
+            50% {
+              border-color: rgb(228, 13, 13);
+            }
+          }
+        }
       }
-    }
 
-    .section2-divArticle3 {
-      display: grid;
-      grid-template-areas: "art1 art2 art3" "art4 art5 art5";
-      gap: 10px;
-      padding-bottom: 2rem;
+      input {
+        margin: 1rem;
+        text-align: center;
+        border: none;
+        border-bottom: 1px solid black;
+        width: 15rem;
 
-      article {
-        background-color: yellowgreen;
-        padding: 4rem 2rem;
+        &:focus {
+          outline: none;
+          width: 20rem;
+          transition: width 500ms;
+        }
+      }
+      button {
+        padding: 1rem 3rem;
         border-radius: 10px;
-      }
-      .section2-divArticle3__article1 {
-        grid-area: art1;
-      }
-
-      .section2-divArticle3__article2 {
-        grid-area: art2;
-      }
-
-      .section2-divArticle3__article3 {
-        grid-area: art3;
-      }
-      .section2-divArticle3__article4 {
-        grid-area: art4;
-      }
-      .section2-divArticle3__article5 {
-        grid-area: art5;
-      }
-    }
-  }
-  .section3 {
-    text-align: center;
-    padding-bottom: 2rem;
-    .section3-div {
-      // position: relative;
-      display: flex;
-      justify-content: center;
-
-      .animated-text-container {
-
-
-        width: 12rem;
-        
-        padding: 1rem;
-        h4 {
-          margin: 1rem;
-          overflow: hidden; /* Ensures the content is not revealed until the animation */
-          border-right: 0.15em solid red; /* The typwriter cursor */
-          white-space: nowrap; /* Keeps the content on a single line */
-          margin: 0 auto;
-          animation: typing 5s steps(40, end) infinite,
-            blink-caret 0.75s step-end infinite;
-        }
-        @keyframes typing {
-          0% {
-            width: 0;
-          }
-
-          50% {
-            width: 100%;
-          }
-
-          100% {
-            width: 0;
-          }
-        }
-
-        @keyframes blink-caret {
-          from,
-          to {
-            border-color: transparent;
-          }
-          50% {
-            border-color: rgb(228, 13, 13);
-          }
+        border: none;
+        &:hover {
+          background-color: rgb(255, 208, 147);
+          transition: background-color 0.5s ease-out 100ms;
         }
       }
     }
-
-    input {
-      margin: 1rem;
-      text-align: center;
-      border: none;
-      border-bottom: 1px solid black;
-    }
-    button {
-      padding: 1rem 3rem;
-      border-radius: 10px;
-      border: none;
-      &:hover {
-        background-color: rgb(255, 208, 147);
-        transition: background-color 0.7s ease-out 100ms;
-      }
-    }
   }
-}
 
-footer {
-  display: flex;
-  justify-content: space-between;
-
-  a {
-    text-decoration: none;
-  }
-  .nav-footer {
-    a {
-      padding: 1rem;
-    }
+  footer {
+    @extend .extend-nav;
   }
 }
