@@ -2,6 +2,9 @@
 
 Refer to this [link](https://preview.themeforest.net/item/maido-multipurpose-ghost-blog-theme/full_screen_preview/24837109?_ga=2.259990478.570486835.1654146705-2133876429.1654146705)(see 'Dark version') and create a similar webpage
 
+Final result of live webpage can be found [here](https://hunghoang108.github.io/scss-assignment-integrify/)
+
+
 ## Requirements (max 4)
 
 1. Floating the HTML elements using Flexbox and Grid system
