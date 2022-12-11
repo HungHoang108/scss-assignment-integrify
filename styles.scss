@@ -1,7 +1,7 @@
-$color1: #e3fdfd;
-$color2: #f08a5d;
-$color3: #f9ed69;
-$color4: #ffc7c7;
+$color1: #444fff;
+$color2: #ffb469;
+$color3: #8b339e;
+$color4: #f9a4d3;
 $color5: #ffe2e2;
 $color6: #aa96da;
 $color7: #a2b29f;
@@ -12,12 +12,11 @@ $borderradious: 10px;
   width: 100%;
   height: 100%;
 }
-
 .extend-nav {
   display: flex;
   justify-content: space-between;
   padding-bottom: 2rem;
-  div {
+  nav {
     position: relative;
     a {
       padding: 1rem;
@@ -33,6 +32,19 @@ $borderradious: 10px;
       border-radius: 100%;
     }
   }
+}
+.extend-bg-pic {
+  background-position: center;
+  background-size: cover;
+}
+.extend-bg-color {
+  content: "";
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .hover-section1 {
@@ -66,7 +78,8 @@ body {
 
         article:nth-child(1) {
           grid-area: area1;
-          background-color: #ffc7c77e;
+          background-image: url("https://images.unsplash.com/photo-1562664377-709f2c337eb2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+          @extend .extend-bg-pic;
           width: 100%;
           height: 100%;
           border-radius: $borderradious;
@@ -75,22 +88,38 @@ body {
 
         article:nth-child(2) {
           grid-area: area2;
-          background-color: $color1;
+          background-image: linear-gradient(
+              hsla(236, 100%, 63%, 0.808),
+              hsla(236, 100%, 63%, 0.808)
+            ),
+            url("https://images.unsplash.com/photo-1566764581662-6cd06d381aef?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+          @extend .extend-bg-pic;
           @extend .hover-section1;
         }
         article:nth-child(3) {
           grid-area: area3;
-          background-color: $color1;
+          background-color: $color2;
+          @extend .extend-bg-pic;
+
           @extend .hover-section1;
         }
         article:nth-child(4) {
           grid-area: area4;
-          background-color: $color1;
+          background-image: linear-gradient(
+              hsla(289, 50%, 41%, 0.808),
+              hsla(289, 50%, 41%, 0.712)
+            ),
+            url("https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
           @extend .hover-section1;
         }
         article:nth-child(5) {
           grid-area: area5;
-          background-color: $color1;
+          background-image: linear-gradient(
+              hsla(327, 88%, 81%, 0.795),
+              hsla(327, 88%, 81%, 0.781)
+            ),
+            url("https://images.unsplash.com/photo-1562185022-c0a7889d7fbb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+          @extend .extend-bg-pic;
           @extend .hover-section1;
         }
         article {
@@ -106,18 +135,65 @@ body {
           border-radius: $borderradious;
         }
         article:nth-child(1) {
-          background-image: url("./img/2.jpg");
+          position: relative;
+          width: 100%;
+          height: 30rem;
+          overflow: hidden;
 
-          div {
-            @extend .extend-section2-bg;
-            background-color: hsla(150, 76%, 43%, 0.582);
+          &:hover {
+            .divArticle2-article1__img {
+              transform: scale(1.03);
+              transition: all 0.4s ease-in-out;
+            }
+          }
+
+          .divArticle2-article1__img {
+            width: 100%;
+            height: 100%;
+            background-image: url("https://images.unsplash.com/photo-1558697698-9300a84a6a99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+            background-position: center;
+            background-size: cover;
+          }
+          .divArticle2-article1__text {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            z-index: 1;
           }
         }
+        .section1-divArticle2-article1::before {
+          @extend .extend-bg-color;
+          background-color: hsla(150, 76%, 43%, 0.582);
+        }
         article:nth-child(2) {
-          div {
-            @extend .extend-section2-bg;
-            background-color: $color3;
+          position: relative;
+          width: 100%;
+          height: 30rem;
+          overflow: hidden;
+
+          &:hover {
+            .divArticle2-article2__img {
+              transform: scale(1.03);
+              transition: all 0.4s ease-in-out;
+            }
           }
+          .divArticle2-article2__img {
+            width: 100%;
+            height: 100%;
+            background-image: url("https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+            background-position: center;
+            background-size: cover;
+          }
+          .divArticle2-article2__text {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            z-index: 1;
+          }
+        }
+        .section1-divArticle2-article2::before {
+          @extend .extend-bg-color;
+          background-color: rgba(52, 73, 94, 0.75);
         }
       }
     }
@@ -131,10 +207,40 @@ body {
         grid-template-columns: auto auto;
         gap: 10px;
         padding-bottom: 1rem;
-        article {
-          background-color: beige;
-          padding: 4rem 2rem;
+
+        .section2-divArticle__art {
+          border-radius: 10px;
+          width: 100%;
+          height: 20rem;
+          position: relative;
+          overflow: hidden;
+
+          &:hover {
+            .divArticle1-art__img {
+              transform: scale(1.03);
+              transition: all 0.4s ease-in-out;
+            }
+          }
+
+          .divArticle1-art__img {
+            width: 100%;
+            height: 100%;
+            background-image: url("https://images.unsplash.com/photo-1558697698-9300a84a6a99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+            background-position: center;
+            background-size: cover;
+          }
+          .divArticle1-art__text {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            z-index: 1;
+          }
         }
+        .section2-divArticle__art::before {
+          @extend .extend-bg-color;
+          background-color: hsla(30, 90%, 72%, 0.808);
+        }
+
       }
 
       .section2-divArticle3 {
@@ -144,12 +250,15 @@ body {
         padding-bottom: 2rem;
 
         article {
-          background-color: yellowgreen;
-          padding: 4rem 2rem;
+          // background-color: yellowgreen;
+          // padding: 4rem 2rem;
+          width: 100%;
+          height: 15rem;
           border-radius: 10px;
         }
         .section2-divArticle3__article1 {
           grid-area: art1;
+
         }
 
         .section2-divArticle3__article2 {
@@ -164,6 +273,38 @@ body {
         }
         .section2-divArticle3__article5 {
           grid-area: art5;
+        }
+        .section2-divArticle__art {
+          border-radius: 10px;
+          width: 100%;
+          height: 20rem;
+          position: relative;
+          overflow: hidden;
+
+          &:hover {
+            .divArticle1-art__img {
+              transform: scale(1.03);
+              transition: all 0.4s ease-in-out;
+            }
+          }
+
+          .divArticle1-art__img {
+            width: 100%;
+            height: 100%;
+            background-image: url("https://images.unsplash.com/photo-1562185022-c0a7889d7fbb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+            background-position: center;
+            background-size: cover;
+          }
+          .divArticle1-art__text {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            z-index: 1;
+          }
+        }
+        .section2-divArticle__art::before {
+          @extend .extend-bg-color;
+          background-color: hsla(326, 88%, 81%, 0.801);
         }
       }
     }
