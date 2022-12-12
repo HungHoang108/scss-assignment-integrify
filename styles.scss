@@ -21,6 +21,7 @@ $borderradious: 10px;
     a {
       padding: 1rem;
       text-decoration: none;
+      color: white;
     }
     a:hover:before {
       content: "";
@@ -46,6 +47,18 @@ $borderradious: 10px;
   top: 0;
   left: 0;
 }
+.extend-arrow-animation {
+  span {
+    color: transparent;
+  }
+  h2:hover {
+    span {
+      color: white;
+      transition: 0.2s ease-in;
+      transform: translateX(4px);
+    }
+  }
+}
 
 .hover-section1 {
   &:hover {
@@ -61,11 +74,25 @@ $borderradious: 10px;
 }
 
 body {
-  padding: 3rem 2rem;
+  padding: 4rem 4rem;
   box-sizing: border-box;
+  background-color: black;
+  color: white;
+
+  header {
+    margin-bottom: 3rem
+  }
 
   .nav {
     @extend .extend-nav;
+    .nav-name {
+      position: relative;
+      left: 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: bolder;
+    }
   }
 
   main {
@@ -81,7 +108,7 @@ body {
           background-image: url("https://images.unsplash.com/photo-1562664377-709f2c337eb2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
           @extend .extend-bg-pic;
           width: 100%;
-          height: 100%;
+          height: 27rem;
           border-radius: $borderradious;
           @extend .hover-section1;
         }
@@ -141,6 +168,7 @@ body {
           overflow: hidden;
 
           &:hover {
+            cursor: pointer;
             .divArticle2-article1__img {
               transform: scale(1.03);
               transition: all 0.4s ease-in-out;
@@ -159,6 +187,7 @@ body {
             bottom: 10%;
             left: 10%;
             z-index: 1;
+            @extend .extend-arrow-animation;
           }
         }
         .section1-divArticle2-article1::before {
@@ -172,6 +201,7 @@ body {
           overflow: hidden;
 
           &:hover {
+            cursor: pointer;
             .divArticle2-article2__img {
               transform: scale(1.03);
               transition: all 0.4s ease-in-out;
@@ -189,6 +219,7 @@ body {
             bottom: 10%;
             left: 10%;
             z-index: 1;
+            @extend .extend-arrow-animation;
           }
         }
         .section1-divArticle2-article2::before {
@@ -216,6 +247,7 @@ body {
           overflow: hidden;
 
           &:hover {
+            cursor: pointer;
             .divArticle1-art__img {
               transform: scale(1.03);
               transition: all 0.4s ease-in-out;
@@ -225,15 +257,22 @@ body {
           .divArticle1-art__img {
             width: 100%;
             height: 100%;
-            background-image: url("https://images.unsplash.com/photo-1558697698-9300a84a6a99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
             background-position: center;
             background-size: cover;
+          }
+
+          #divArticle1-art__img {
+            background-image: url("https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+          }
+          #divArticle2-art__img {
+            background-image: url("https://images.unsplash.com/photo-1562185022-c0a7889d7fbb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
           }
           .divArticle1-art__text {
             position: absolute;
             bottom: 10%;
             left: 10%;
             z-index: 1;
+            @extend .extend-arrow-animation;
           }
         }
         .section2-divArticle__art::before {
@@ -241,6 +280,12 @@ body {
           background-color: hsla(30, 90%, 72%, 0.808);
         }
 
+        #section2-divArticle1__art::before {
+          background-color: hsla(283, 68%, 84%, 0.815);
+        }
+        #section2-divArticle2__art::before {
+          background-color: hsla(30, 78%, 67%, 0.781);
+        }
       }
 
       .section2-divArticle3 {
@@ -250,15 +295,12 @@ body {
         padding-bottom: 2rem;
 
         article {
-          // background-color: yellowgreen;
-          // padding: 4rem 2rem;
           width: 100%;
-          height: 15rem;
+          height: 16rem;
           border-radius: 10px;
         }
         .section2-divArticle3__article1 {
           grid-area: art1;
-
         }
 
         .section2-divArticle3__article2 {
@@ -282,6 +324,7 @@ body {
           overflow: hidden;
 
           &:hover {
+            cursor: pointer;
             .divArticle1-art__img {
               transform: scale(1.03);
               transition: all 0.4s ease-in-out;
@@ -295,16 +338,45 @@ body {
             background-position: center;
             background-size: cover;
           }
+          #section2-divArticle3__img1 {
+            background-image: url("https://images.unsplash.com/photo-1528441397448-a44d50563cf8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+          }
+          #section2-divArticle3__img2 {
+            background-image: url("https://images.unsplash.com/photo-1544457070-4cd773b4d71e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+          }
+          #section2-divArticle3__img3 {
+            background-image: url("https://images.unsplash.com/photo-1551216223-37c8d1dbec5c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+          }
+          #section2-divArticle3__img4 {
+            background-image: url("https://images.unsplash.com/photo-1556742208-999815fca738?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+          }
+
           .divArticle1-art__text {
             position: absolute;
             bottom: 10%;
             left: 10%;
             z-index: 1;
+            @extend .extend-arrow-animation;
           }
         }
         .section2-divArticle__art::before {
           @extend .extend-bg-color;
           background-color: hsla(326, 88%, 81%, 0.801);
+        }
+        #section2-divArticle3__art1::before {
+          background-color: transparent;
+        }
+        #section2-divArticle3__art2::before {
+          background-color: hsla(327, 81%, 71%, 0.815);
+        }
+        #section2-divArticle3__art3::before {
+          background-color: hsla(240, 2%, 54%, 0.815);
+        }
+        #section2-divArticle3__art4::before {
+          background-color: hsla(240, 3%, 62%, 0.411);
+        }
+        #section2-divArticle3__art5::before {
+          background-color: #62e2cc;
         }
       }
     }
@@ -317,14 +389,14 @@ body {
         justify-content: center;
 
         .animated-text-container {
-          width: 12rem;
+          width: 14rem;
 
           padding: 1rem;
           h4 {
             margin: 1rem;
-            overflow: hidden; /* Ensures the content is not revealed until the animation */
-            border-right: 0.15em solid red; /* The typwriter cursor */
-            white-space: nowrap; /* Keeps the content on a single line */
+            overflow: hidden;
+            border-right: 0.15em solid rgb(255, 145, 0);
+            white-space: nowrap;
             margin: 0 auto;
             animation: typing 5s steps(40, end) infinite,
               blink-caret 0.75s step-end infinite;
@@ -349,7 +421,7 @@ body {
               border-color: transparent;
             }
             50% {
-              border-color: rgb(228, 13, 13);
+              border-color: rgb(228, 128, 13);
             }
           }
         }
@@ -359,8 +431,10 @@ body {
         margin: 1rem;
         text-align: center;
         border: none;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid rgb(243, 237, 237);
         width: 15rem;
+        background-color: black;
+        padding: 1rem;
 
         &:focus {
           outline: none;
@@ -382,5 +456,9 @@ body {
 
   footer {
     @extend .extend-nav;
+    a {
+      color: white;
+      padding-right: 1.5rem;
+    }
   }
 }

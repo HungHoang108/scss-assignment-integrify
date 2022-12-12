@@ -16,6 +16,7 @@
 .extend-nav nav a, body footer nav a, body .nav nav a {
   padding: 1rem;
   text-decoration: none;
+  color: white;
 }
 .extend-nav nav a:hover:before, body footer nav a:hover:before, body .nav nav a:hover:before {
   content: "";
@@ -42,6 +43,15 @@
   left: 0;
 }
 
+.extend-arrow-animation span, body main .section2 .section2-divArticle3 .section2-divArticle__art .divArticle1-art__text span, body main .section2 .section2-divArticle1 .section2-divArticle__art .divArticle1-art__text span, body main .section1 .section1-divArticle2 article:nth-child(2) .divArticle2-article2__text span, body main .section1 .section1-divArticle2 article:nth-child(1) .divArticle2-article1__text span {
+  color: transparent;
+}
+.extend-arrow-animation h2:hover span, body main .section2 .section2-divArticle3 .section2-divArticle__art .divArticle1-art__text h2:hover span, body main .section2 .section2-divArticle1 .section2-divArticle__art .divArticle1-art__text h2:hover span, body main .section1 .section1-divArticle2 article:nth-child(2) .divArticle2-article2__text h2:hover span, body main .section1 .section1-divArticle2 article:nth-child(1) .divArticle2-article1__text h2:hover span {
+  color: white;
+  transition: 0.2s ease-in;
+  transform: translateX(4px);
+}
+
 .hover-section1:hover, body main .section1 .section1-divArticle1 article:hover:nth-child(5), body main .section1 .section1-divArticle1 article:hover:nth-child(4), body main .section1 .section1-divArticle1 article:hover:nth-child(3), body main .section1 .section1-divArticle1 article:hover:nth-child(2), body main .section1 .section1-divArticle1 article:hover:nth-child(1) {
   transition: 300ms ease;
   transform: translateY(-0.5rem);
@@ -54,8 +64,21 @@
 }
 
 body {
-  padding: 3rem 2rem;
+  padding: 4rem 4rem;
   box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+body header {
+  margin-bottom: 3rem;
+}
+body .nav .nav-name {
+  position: relative;
+  left: 1rem;
+}
+body .nav h1 {
+  font-size: 3rem;
+  font-weight: bolder;
 }
 body main .section1 .section1-divArticle1 {
   display: grid;
@@ -67,7 +90,7 @@ body main .section1 .section1-divArticle1 article:nth-child(1) {
   grid-area: area1;
   background-image: url("https://images.unsplash.com/photo-1562664377-709f2c337eb2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
   width: 100%;
-  height: 100%;
+  height: 27rem;
   border-radius: 10px;
 }
 body main .section1 .section1-divArticle1 article:nth-child(2) {
@@ -103,6 +126,9 @@ body main .section1 .section1-divArticle2 article:nth-child(1) {
   height: 30rem;
   overflow: hidden;
 }
+body main .section1 .section1-divArticle2 article:nth-child(1):hover {
+  cursor: pointer;
+}
 body main .section1 .section1-divArticle2 article:nth-child(1):hover .divArticle2-article1__img {
   transform: scale(1.03);
   transition: all 0.4s ease-in-out;
@@ -128,6 +154,9 @@ body main .section1 .section1-divArticle2 article:nth-child(2) {
   width: 100%;
   height: 30rem;
   overflow: hidden;
+}
+body main .section1 .section1-divArticle2 article:nth-child(2):hover {
+  cursor: pointer;
 }
 body main .section1 .section1-divArticle2 article:nth-child(2):hover .divArticle2-article2__img {
   transform: scale(1.03);
@@ -166,6 +195,9 @@ body main .section2 .section2-divArticle1 .section2-divArticle__art {
   position: relative;
   overflow: hidden;
 }
+body main .section2 .section2-divArticle1 .section2-divArticle__art:hover {
+  cursor: pointer;
+}
 body main .section2 .section2-divArticle1 .section2-divArticle__art:hover .divArticle1-art__img {
   transform: scale(1.03);
   transition: all 0.4s ease-in-out;
@@ -173,9 +205,14 @@ body main .section2 .section2-divArticle1 .section2-divArticle__art:hover .divAr
 body main .section2 .section2-divArticle1 .section2-divArticle__art .divArticle1-art__img {
   width: 100%;
   height: 100%;
-  background-image: url("https://images.unsplash.com/photo-1558697698-9300a84a6a99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
   background-position: center;
   background-size: cover;
+}
+body main .section2 .section2-divArticle1 .section2-divArticle__art #divArticle1-art__img {
+  background-image: url("https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+}
+body main .section2 .section2-divArticle1 .section2-divArticle__art #divArticle2-art__img {
+  background-image: url("https://images.unsplash.com/photo-1562185022-c0a7889d7fbb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
 }
 body main .section2 .section2-divArticle1 .section2-divArticle__art .divArticle1-art__text {
   position: absolute;
@@ -186,6 +223,12 @@ body main .section2 .section2-divArticle1 .section2-divArticle__art .divArticle1
 body main .section2 .section2-divArticle1 .section2-divArticle__art::before {
   background-color: hsla(30deg, 90%, 72%, 0.808);
 }
+body main .section2 .section2-divArticle1 #section2-divArticle1__art::before {
+  background-color: hsla(283deg, 68%, 84%, 0.815);
+}
+body main .section2 .section2-divArticle1 #section2-divArticle2__art::before {
+  background-color: hsla(30deg, 78%, 67%, 0.781);
+}
 body main .section2 .section2-divArticle3 {
   display: grid;
   grid-template-areas: "art1 art2 art3" "art4 art5 art5";
@@ -194,7 +237,7 @@ body main .section2 .section2-divArticle3 {
 }
 body main .section2 .section2-divArticle3 article {
   width: 100%;
-  height: 15rem;
+  height: 16rem;
   border-radius: 10px;
 }
 body main .section2 .section2-divArticle3 .section2-divArticle3__article1 {
@@ -219,6 +262,9 @@ body main .section2 .section2-divArticle3 .section2-divArticle__art {
   position: relative;
   overflow: hidden;
 }
+body main .section2 .section2-divArticle3 .section2-divArticle__art:hover {
+  cursor: pointer;
+}
 body main .section2 .section2-divArticle3 .section2-divArticle__art:hover .divArticle1-art__img {
   transform: scale(1.03);
   transition: all 0.4s ease-in-out;
@@ -230,6 +276,18 @@ body main .section2 .section2-divArticle3 .section2-divArticle__art .divArticle1
   background-position: center;
   background-size: cover;
 }
+body main .section2 .section2-divArticle3 .section2-divArticle__art #section2-divArticle3__img1 {
+  background-image: url("https://images.unsplash.com/photo-1528441397448-a44d50563cf8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+}
+body main .section2 .section2-divArticle3 .section2-divArticle__art #section2-divArticle3__img2 {
+  background-image: url("https://images.unsplash.com/photo-1544457070-4cd773b4d71e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+}
+body main .section2 .section2-divArticle3 .section2-divArticle__art #section2-divArticle3__img3 {
+  background-image: url("https://images.unsplash.com/photo-1551216223-37c8d1dbec5c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+}
+body main .section2 .section2-divArticle3 .section2-divArticle__art #section2-divArticle3__img4 {
+  background-image: url("https://images.unsplash.com/photo-1556742208-999815fca738?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ");
+}
 body main .section2 .section2-divArticle3 .section2-divArticle__art .divArticle1-art__text {
   position: absolute;
   bottom: 10%;
@@ -238,6 +296,21 @@ body main .section2 .section2-divArticle3 .section2-divArticle__art .divArticle1
 }
 body main .section2 .section2-divArticle3 .section2-divArticle__art::before {
   background-color: hsla(326deg, 88%, 81%, 0.801);
+}
+body main .section2 .section2-divArticle3 #section2-divArticle3__art1::before {
+  background-color: transparent;
+}
+body main .section2 .section2-divArticle3 #section2-divArticle3__art2::before {
+  background-color: hsla(327deg, 81%, 71%, 0.815);
+}
+body main .section2 .section2-divArticle3 #section2-divArticle3__art3::before {
+  background-color: hsla(240deg, 2%, 54%, 0.815);
+}
+body main .section2 .section2-divArticle3 #section2-divArticle3__art4::before {
+  background-color: hsla(240deg, 3%, 62%, 0.411);
+}
+body main .section2 .section2-divArticle3 #section2-divArticle3__art5::before {
+  background-color: #62e2cc;
 }
 body main .section3 {
   text-align: center;
@@ -248,14 +321,14 @@ body main .section3 .section3-div {
   justify-content: center;
 }
 body main .section3 .section3-div .animated-text-container {
-  width: 12rem;
+  width: 14rem;
   padding: 1rem;
 }
 body main .section3 .section3-div .animated-text-container h4 {
   margin: 1rem;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid red; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
+  overflow: hidden;
+  border-right: 0.15em solid rgb(255, 145, 0);
+  white-space: nowrap;
   margin: 0 auto;
   -webkit-animation: typing 5s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
           animation: typing 5s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
@@ -287,7 +360,7 @@ body main .section3 .section3-div .animated-text-container h4 {
     border-color: transparent;
   }
   50% {
-    border-color: rgb(228, 13, 13);
+    border-color: rgb(228, 128, 13);
   }
 }
 @keyframes blink-caret {
@@ -295,15 +368,17 @@ body main .section3 .section3-div .animated-text-container h4 {
     border-color: transparent;
   }
   50% {
-    border-color: rgb(228, 13, 13);
+    border-color: rgb(228, 128, 13);
   }
 }
 body main .section3 input {
   margin: 1rem;
   text-align: center;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(243, 237, 237);
   width: 15rem;
+  background-color: black;
+  padding: 1rem;
 }
 body main .section3 input:focus {
   outline: none;
@@ -318,4 +393,8 @@ body main .section3 button {
 body main .section3 button:hover {
   background-color: rgb(255, 208, 147);
   transition: background-color 0.5s ease-out 100ms;
+}
+body footer a {
+  color: white;
+  padding-right: 1.5rem;
 }/*# sourceMappingURL=styles.css.map */
